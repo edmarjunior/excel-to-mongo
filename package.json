@@ -1,0 +1,11 @@
+{
+  "name": "excel-to-mongo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Edmar Costa <edmar.acjr@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^3.6.2",
+    "read-excel-file": "^4.0.7"
+  }
+}
