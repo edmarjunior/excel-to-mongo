@@ -15,6 +15,9 @@ cd excel-to-mongo
 // create env.js file (edit with your database settings)
 cp env.copy.js env.js
 
+// install dependencies
+npm i
+
 // run index.js file
 node index.js
 ```
