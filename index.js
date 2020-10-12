@@ -3,22 +3,17 @@ const { insertDocuments } = require('./db')
 
 function init () {
     readXlsxFile('./data.xlsx').then((rows) => {
-        const [cols, ...restRows] = rows;
-
-        const access = []
-
-        for (const row of restRows) {
-            const accessItem = {
-                ip: row[4],
-                resource: row[1],
-                createAt: new Date(row[3]),
-                userId: row[5],
-                location: JSON.parse(row[2])
-            }
-
-            access.push(accessItem)
-        }
         
+        // remove the first row (headers)
+        rows.shift()
+
+        const access = rows.map(row => ({
+            ip: row[0],
+            resource: row[1],
+            createAt: new Date(row[2]),
+            location: JSON.parse(row[3])
+        }))
+
         console.log('Readed rows: ', access.length)
         
         insertDocuments(access)
