@@ -3,8 +3,8 @@ const MongoClient = require('mongodb').MongoClient;
 function insertDocuments (documents) {
 
     const urlMongo = 'mongodb://localhost:27017/db_excel', 
-            dbName = 'database', 
-            collectionName = 'collection'
+        dbName = 'database', 
+        collectionName = 'collection'
 
     MongoClient.connect(urlMongo, function(err, client) {
 
